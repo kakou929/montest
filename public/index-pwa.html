@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes" />
+    <meta name="theme-color" content="#001F3F" />
+    <meta name="description" content="Mondiale Auto-École - Formation complète au permis de conduire en Côte d'Ivoire. Quiz interactifs, panneaux de signalisation, cours de conduite." />
+    <meta name="keywords" content="auto-école, permis de conduire, Côte d'Ivoire, quiz code de la route, panneaux signalisation, formation conduite" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://mondiale-autoecole.web.app/" />
+    <meta property="og:title" content="Mondiale Auto-École - Permis de conduire en Côte d'Ivoire" />
+    <meta property="og:description" content="Formation complète au permis de conduire. Quiz, panneaux, cours de conduite." />
+    <meta property="og:image" content="/logo512.png" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://mondiale-autoecole.web.app/" />
+    <meta property="twitter:title" content="Mondiale Auto-École" />
+    <meta property="twitter:description" content="Formation complète au permis de conduire en Côte d'Ivoire" />
+    <meta property="twitter:image" content="/logo512.png" />
+    
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" href="/logo192.png" />
+    
+    <!-- Manifest PWA -->
+    <link rel="manifest" href="/manifest.json" />
+    
+    <!-- Mobile Optimizations -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Mondiale" />
+    
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" />
+    
+    <title>Mondiale Auto-École - Permis de conduire CI</title>
+    
+    <!-- Preconnect pour performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <style>
+        /* Splash Screen */
+        #splash-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, #001F3F 0%, #003366 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.3s ease-out;
+        }
+        
+        #splash-screen.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .splash-logo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #3498db, #2ecc71);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            color: white;
+            font-weight: bold;
+            animation: pulse 1.5s ease-in-out infinite;
+            box-shadow: 0 10px 40px rgba(52, 152, 219, 0.5);
+        }
+        
+        .splash-text {
+            color: white;
+            font-size: 28px;
+            font-weight: bold;
+            margin-top: 30px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        
+        .splash-loading {
+            margin-top: 40px;
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <noscript>Vous devez activer JavaScript pour utiliser cette application.</noscript>
+    
+    <!-- Splash Screen -->
+    <div id="splash-screen">
+        <div class="splash-logo">M</div>
+        <div class="splash-text">ondiale</div>
+        <div class="splash-loading"></div>
+    </div>
+    
+    <!-- App Root -->
+    <div id="root"></div>
+    
+    <!-- PWA Install Prompt -->
+    <div id="install-prompt" style="display: none; position: fixed; bottom: 20px; left: 20px; right: 20px; background: white; padding: 20px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); z-index: 10000;">
+        <div style="display: flex; align-items: center; gap: 15px;">
+            <div style="width: 50px; height: 50px; border-radius: 50%; background: linear-gradient(135deg, #3498db, #2ecc71); display: flex; align-items: center; justify-content: center; font-size: 28px; color: white; font-weight: bold;">M</div>
+            <div style="flex: 1;">
+                <div style="font-weight: bold; font-size: 16px; color: #001F3F; margin-bottom: 5px;">Installer Mondiale Auto-École</div>
+                <div style="font-size: 14px; color: #6c757d;">Accédez rapidement à vos cours</div>
+            </div>
+            <button id="install-btn" style="background: linear-gradient(135deg, #3498db, #2ecc71); color: white; border: none; padding: 12px 25px; border-radius: 10px; font-weight: bold; cursor: pointer;">Installer</button>
+            <button id="dismiss-btn" style="background: transparent; border: none; font-size: 24px; color: #6c757d; cursor: pointer;">×</button>
+        </div>
+    </div>
+    
+    <script>
+        // Masquer le splash screen après le chargement
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const splash = document.getElementById('splash-screen');
+                splash.classList.add('hidden');
+                setTimeout(() => splash.remove(), 300);
+            }, 1500);
+        });
+        
+        // PWA Installation
+        let deferredPrompt;
+        
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            
+            // Afficher le prompt d'installation après 3 secondes
+            setTimeout(() => {
+                document.getElementById('install-prompt').style.display = 'block';
+            }, 3000);
+        });
+        
+        document.getElementById('install-btn')?.addEventListener('click', async () => {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                const { outcome } = await deferredPrompt.userChoice;
+                console.log(`User response: ${outcome}`);
+                deferredPrompt = null;
+                document.getElementById('install-prompt').style.display = 'none';
+            }
+        });
+        
+        document.getElementById('dismiss-btn')?.addEventListener('click', () => {
+            document.getElementById('install-prompt').style.display = 'none';
+        });
+        
+        // Register Service Worker
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then((registration) => {
+                        console.log('SW registered:', registration);
+                    })
+                    .catch((error) => {
+                        console.log('SW registration failed:', error);
+                    });
+            });
+        }
+    </script>
+</body>
+</html>

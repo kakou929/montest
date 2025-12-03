@@ -1,0 +1,651 @@
+/* ========================================
+   MOBILE CSS - MONDIALE AUTO-ÉCOLE
+   Responsive & PWA Ready
+   ======================================== */
+
+/* === RESET & BASE === */
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* === COULEURS PRINCIPALES === */
+:root {
+  --primary-blue: #2563eb;
+  --dark-blue: #001F3F;
+  --success-green: #10b981;
+  --white: #ffffff;
+}
+
+/* === LOGO ROND BLEU === */
+.logo-circle {
+  background: #2563eb !important;
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4) !important;
+}
+
+/* === MOBILE BREAKPOINTS === */
+
+/* Très petits téléphones (320px - 374px) */
+@media (max-width: 374px) {
+  html {
+    font-size: 14px;
+  }
+  
+  .navbar {
+    padding: 12px 15px !important;
+  }
+  
+  .navbar h1 {
+    font-size: 16px !important;
+  }
+  
+  .logo-circle {
+    width: 35px !important;
+    height: 35px !important;
+    font-size: 20px !important;
+  }
+}
+
+/* Petits téléphones (375px - 767px) */
+@media (max-width: 767px) {
+  
+  /* === NAVIGATION === */
+  .navbar {
+    padding: 15px 20px !important;
+    flex-wrap: wrap;
+  }
+  
+  .navbar h1 {
+    font-size: 18px !important;
+  }
+  
+  .navbar > div {
+    flex-wrap: wrap;
+    gap: 10px !important;
+  }
+  
+  .navbar a, .navbar button {
+    font-size: 14px !important;
+    padding: 10px 20px !important;
+  }
+  
+  /* === HERO SECTION === */
+  .hero-section {
+    padding: 40px 15px !important;
+  }
+  
+  .hero-section h2 {
+    font-size: 32px !important;
+    line-height: 1.2 !important;
+  }
+  
+  .hero-section p {
+    font-size: 16px !important;
+  }
+  
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 30px !important;
+  }
+  
+  .car-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 10px !important;
+  }
+  
+  .car-item {
+    padding: 20px !important;
+    font-size: 40px !important;
+  }
+  
+  /* === FORMULAIRES === */
+  .form-container {
+    padding: 25px 20px !important;
+    margin: 20px !important;
+  }
+  
+  .form-container h2 {
+    font-size: 28px !important;
+  }
+  
+  input, select, textarea, button {
+    font-size: 16px !important; /* Important pour éviter le zoom iOS */
+    padding: 14px !important;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="password"],
+  input[type="date"],
+  select,
+  textarea {
+    width: 100% !important;
+    max-width: 100% !important;
+    border-radius: 10px !important;
+  }
+  
+  /* === CARTES === */
+  .card {
+    padding: 20px !important;
+    margin: 10px !important;
+  }
+  
+  .cards-grid {
+    grid-template-columns: 1fr !important;
+    gap: 15px !important;
+    padding: 0 15px !important;
+  }
+  
+  /* === DASHBOARD === */
+  .dashboard-layout {
+    flex-direction: column !important;
+  }
+  
+  .sidebar {
+    width: 100% !important;
+    position: fixed !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    top: auto !important;
+    z-index: 1000 !important;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1) !important;
+    padding: 10px 0 !important;
+    max-height: 70px !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+  }
+  
+  .sidebar-items {
+    display: flex !important;
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    gap: 0 !important;
+    padding: 0 10px !important;
+  }
+  
+  .sidebar-item {
+    flex: 0 0 auto !important;
+    min-width: 70px !important;
+    padding: 8px 5px !important;
+    border-left: none !important;
+    border-bottom: 3px solid transparent !important;
+    text-align: center !important;
+    font-size: 11px !important;
+  }
+  
+  .sidebar-item.active {
+    border-left: none !important;
+    border-bottom: 3px solid #001F3F !important;
+  }
+  
+  .sidebar-item span:first-child {
+    font-size: 20px !important;
+    display: block !important;
+    margin-bottom: 3px !important;
+  }
+  
+  .main-content {
+    padding: 20px 15px 90px !important; /* 90px pour le menu du bas */
+    margin-left: 0 !important;
+  }
+  
+  /* === QUIZ === */
+  .quiz-container {
+    padding: 20px 15px !important;
+  }
+  
+  .quiz-question {
+    font-size: 20px !important;
+    line-height: 1.4 !important;
+  }
+  
+  .quiz-option {
+    padding: 15px 20px !important;
+    font-size: 15px !important;
+  }
+  
+  .quiz-progress {
+    height: 8px !important;
+  }
+  
+  /* === PANNEAUX === */
+  .panneaux-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)) !important;
+    gap: 15px !important;
+  }
+  
+  .panneau-card {
+    padding: 20px 15px !important;
+  }
+  
+  .panneau-icon {
+    width: 70px !important;
+    height: 70px !important;
+    font-size: 40px !important;
+  }
+  
+  .panneau-name {
+    font-size: 13px !important;
+    line-height: 1.3 !important;
+  }
+  
+  /* === ABONNEMENT === */
+  .plans-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+  
+  .plan-card {
+    padding: 30px 20px !important;
+  }
+  
+  .plan-price {
+    font-size: 36px !important;
+  }
+  
+  /* === BOUTONS === */
+  .btn {
+    width: 100% !important;
+    padding: 16px 20px !important;
+    font-size: 16px !important;
+    border-radius: 12px !important;
+  }
+  
+  .btn-group {
+    flex-direction: column !important;
+    gap: 10px !important;
+  }
+  
+  .btn-group .btn {
+    width: 100% !important;
+  }
+  
+  /* === TITRES === */
+  h1 {
+    font-size: 28px !important;
+  }
+  
+  h2 {
+    font-size: 32px !important;
+  }
+  
+  h3 {
+    font-size: 22px !important;
+  }
+  
+  h4 {
+    font-size: 18px !important;
+  }
+  
+  /* === RECHERCHE === */
+  .search-bar {
+    padding: 14px 20px !important;
+    font-size: 16px !important;
+    border-radius: 50px !important;
+  }
+  
+  /* === CATÉGORIES === */
+  .categories-filter {
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+    padding: 0 15px !important;
+  }
+  
+  .category-btn {
+    padding: 12px 20px !important;
+    font-size: 14px !important;
+    white-space: nowrap !important;
+  }
+  
+  /* === STATISTIQUES === */
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 15px !important;
+  }
+  
+  .stat-card {
+    padding: 20px 15px !important;
+  }
+  
+  .stat-value {
+    font-size: 32px !important;
+  }
+  
+  /* === MODAL / POPUP === */
+  .modal {
+    width: 95% !important;
+    max-width: 95% !important;
+    margin: 20px auto !important;
+  }
+  
+  .modal-content {
+    padding: 25px 20px !important;
+  }
+  
+  /* === MESSAGES === */
+  .message-box {
+    margin: 10px 15px !important;
+    padding: 15px !important;
+    font-size: 14px !important;
+    border-radius: 10px !important;
+  }
+  
+  /* === FOOTER === */
+  footer {
+    padding: 30px 20px !important;
+    text-align: center !important;
+  }
+  
+  /* === LOGO === */
+  .logo-circle {
+    width: 40px !important;
+    height: 40px !important;
+    font-size: 22px !important;
+  }
+  
+  /* === SCROLLBAR MOBILE === */
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: rgba(0, 31, 63, 0.3);
+    border-radius: 10px;
+  }
+}
+
+/* Tablettes (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  
+  .panneaux-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+  
+  .sidebar {
+    width: 220px !important;
+  }
+  
+  .main-content {
+    margin-left: 220px !important;
+  }
+}
+
+/* === ORIENTATIONS === */
+
+/* Mode paysage sur mobile */
+@media (max-width: 767px) and (orientation: landscape) {
+  
+  .hero-section {
+    padding: 30px 15px !important;
+  }
+  
+  .hero-section h2 {
+    font-size: 28px !important;
+  }
+  
+  .sidebar {
+    max-height: 60px !important;
+  }
+  
+  .main-content {
+    padding-bottom: 70px !important;
+  }
+}
+
+/* === PWA SPÉCIFIQUE === */
+
+/* Mode standalone (installé comme app) */
+@media (display-mode: standalone) {
+  
+  body {
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+  
+  .navbar {
+    padding-top: calc(15px + env(safe-area-inset-top)) !important;
+  }
+  
+  .sidebar {
+    bottom: env(safe-area-inset-bottom) !important;
+  }
+  
+  /* Masquer les éléments web inutiles en mode app */
+  .install-prompt {
+    display: none !important;
+  }
+}
+
+/* Mode plein écran */
+@media (display-mode: fullscreen) {
+  .navbar {
+    padding-top: 20px !important;
+  }
+}
+
+/* === TOUCHES TACTILES === */
+
+/* Agrandir les zones tactiles */
+@media (max-width: 767px) {
+  a, button, input, select, .clickable {
+    min-height: 44px !important; /* Recommandation Apple */
+    min-width: 44px !important;
+  }
+  
+  /* Feedback visuel tactile */
+  button:active,
+  .btn:active,
+  .card:active,
+  .clickable:active {
+    transform: scale(0.98) !important;
+    opacity: 0.9 !important;
+  }
+}
+
+/* === PERFORMANCE === */
+
+/* Accélération matérielle */
+@media (max-width: 767px) {
+  .navbar,
+  .sidebar,
+  .card,
+  .modal,
+  .btn {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    will-change: transform;
+  }
+  
+  /* Smooth scroll */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Optimisation des images */
+  img {
+    max-width: 100%;
+    height: auto;
+    image-rendering: -webkit-optimize-contrast;
+  }
+}
+
+/* === ACCESSIBILITÉ === */
+
+/* Réduire les animations si préférence utilisateur */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Mode sombre */
+@media (prefers-color-scheme: dark) {
+  /* À implémenter si nécessaire */
+}
+
+/* === UTILITAIRES MOBILE === */
+
+.mobile-only {
+  display: none;
+}
+
+.desktop-only {
+  display: block;
+}
+
+@media (max-width: 767px) {
+  .mobile-only {
+    display: block !important;
+  }
+  
+  .desktop-only {
+    display: none !important;
+  }
+  
+  .hide-on-mobile {
+    display: none !important;
+  }
+  
+  .full-width-mobile {
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+
+/* === ANIMATIONS MOBILE === */
+
+@media (max-width: 767px) {
+  @keyframes slideUp {
+    from {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.3s ease-out;
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-out;
+  }
+}
+
+/* === PULL TO REFRESH === */
+
+@media (max-width: 767px) {
+  body {
+    overscroll-behavior-y: contain;
+  }
+}
+
+/* === CLAVIER VIRTUEL === */
+
+@media (max-width: 767px) {
+  /* Empêcher le zoom sur les inputs */
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="password"],
+  input[type="number"],
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+  
+  /* Adapter quand le clavier est ouvert */
+  .keyboard-open {
+    height: auto !important;
+  }
+}
+
+/* === GESTES TACTILES === */
+
+@media (max-width: 767px) {
+  /* Swipe indicators */
+  .swipeable {
+    touch-action: pan-x;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+  
+  /* Prévenir le double-tap zoom */
+  * {
+    touch-action: manipulation;
+  }
+}
+
+/* === SPLASH SCREEN STYLING === */
+
+.splash-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #001F3F 0%, #003366 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.splash-logo {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
