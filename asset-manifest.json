@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/montest/static/css/main.1fc71a0d.css",
+    "main.js": "/montest/static/js/main.438d8d04.js",
+    "index.html": "/montest/index.html",
+    "main.1fc71a0d.css.map": "/montest/static/css/main.1fc71a0d.css.map",
+    "main.438d8d04.js.map": "/montest/static/js/main.438d8d04.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1fc71a0d.css",
+    "static/js/main.438d8d04.js"
+  ]
+}
