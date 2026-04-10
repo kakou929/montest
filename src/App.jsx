@@ -19,7 +19,7 @@ import SimulateurDegagements from './SimulateurDegagements';
 
 function App() {
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <div className="App">
         <Routes>
           {/* Page d'accueil */}

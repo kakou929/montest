@@ -386,7 +386,7 @@ const PanneauxSignalisation = () => {
               {/* Image du panneau */}
               <div className="w-32 h-32 mx-auto mb-4 flex items-center justify-center">
                 <img 
-                  src={`/images/panneaux/${panneau.image}`}
+                  src={`${process.env.PUBLIC_URL}/images/panneaux/${panneau.image}`}
                   alt={panneau.nom}
                   className="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform"
                   onError={(e) => {

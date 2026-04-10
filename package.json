@@ -17,7 +17,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build -r http://local_proxy@127.0.0.1:34299/git/kakou929/montest"
+    "deploy": "gh-pages -d build -r http://local_proxy@127.0.0.1:40939/git/kakou929/montest"
   },
   "browserslist": {
     "production": [
