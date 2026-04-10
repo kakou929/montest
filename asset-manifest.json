@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/montest/static/css/main.1fc71a0d.css",
-    "main.js": "/montest/static/js/main.438d8d04.js",
+    "main.js": "/montest/static/js/main.94f0c7af.js",
     "index.html": "/montest/index.html",
     "main.1fc71a0d.css.map": "/montest/static/css/main.1fc71a0d.css.map",
-    "main.438d8d04.js.map": "/montest/static/js/main.438d8d04.js.map"
+    "main.94f0c7af.js.map": "/montest/static/js/main.94f0c7af.js.map"
   },
   "entrypoints": [
     "static/css/main.1fc71a0d.css",
-    "static/js/main.438d8d04.js"
+    "static/js/main.94f0c7af.js"
   ]
 }
