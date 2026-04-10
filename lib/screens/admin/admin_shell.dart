@@ -3,7 +3,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../providers/app_providers.dart';
-import '../../utils/app_router.dart';
 import '../../utils/app_theme.dart';
 
 class AdminShell extends ConsumerWidget {
@@ -12,7 +11,7 @@ class AdminShell extends ConsumerWidget {
 
   int _selectedIndex(BuildContext context) {
     final location = GoRouterState.of(context).matchedLocation;
-    if (location.startsWith(AppRoutes.adminStudents)) return 1;
+    if (location.startsWith('/admin/students')) return 1;
     return 0;
   }
 
@@ -92,9 +91,9 @@ class AdminShell extends ConsumerWidget {
         onDestinationSelected: (index) {
           switch (index) {
             case 0:
-              context.go(AppRoutes.adminDashboard);
+              context.go('/admin');
             case 1:
-              context.go(AppRoutes.adminStudents);
+              context.go('/admin/students');
           }
         },
         destinations: const [

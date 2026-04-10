@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-enum UserRole { admin, student }
+enum UserRole { admin, student, instructor }
 
 enum StudentStatus { active, inactive, suspended, graduated }
 

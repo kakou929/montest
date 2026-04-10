@@ -2,16 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../../utils/app_theme.dart';
 
-class StudentShell extends StatelessWidget {
+class InstructorShell extends StatelessWidget {
   final Widget child;
-  const StudentShell({super.key, required this.child});
+  const InstructorShell({super.key, required this.child});
 
   static const _items = [
-    (icon: Icons.home_outlined,    active: Icons.home,      label: 'Accueil',    path: '/student'),
-    (icon: Icons.menu_book_outlined,active: Icons.menu_book,label: 'Formation',  path: '/student/formation'),
-    (icon: Icons.traffic_outlined,  active: Icons.traffic,   label: 'Panneaux',  path: '/student/panneaux'),
-    (icon: Icons.quiz_outlined,     active: Icons.quiz,      label: 'Quiz',       path: '/student/quiz'),
-    (icon: Icons.person_outline,    active: Icons.person,    label: 'Profil',     path: '/student/profile'),
+    (icon: Icons.dashboard_outlined, active: Icons.dashboard, label: 'Accueil',   path: '/instructor'),
+    (icon: Icons.people_outline,      active: Icons.people,    label: 'Élèves',    path: '/instructor/students'),
+    (icon: Icons.event_outlined,      active: Icons.event,     label: 'Leçons',    path: '/instructor/lessons'),
+    (icon: Icons.chat_outlined,       active: Icons.chat,      label: 'Messages',  path: '/instructor/messages'),
   ];
 
   @override
@@ -25,7 +24,6 @@ class StudentShell extends StatelessWidget {
         decoration: const BoxDecoration(
           color: AppColors.card,
           border: Border(top: BorderSide(color: AppColors.borderCol)),
-          boxShadow: [BoxShadow(color: Color(0x0A000000), blurRadius: 12)],
         ),
         child: SafeArea(
           child: Padding(
@@ -48,14 +46,6 @@ class StudentShell extends StatelessWidget {
                                 fontSize: 9,
                                 fontWeight: FontWeight.w600,
                                 color: on ? AppColors.red : AppColors.textLight)),
-                        const SizedBox(height: 3),
-                        AnimatedContainer(
-                          duration: const Duration(milliseconds: 200),
-                          width: on ? 4 : 0,
-                          height: 4,
-                          decoration: const BoxDecoration(
-                              color: AppColors.red, shape: BoxShape.circle),
-                        ),
                       ],
                     ),
                   ),

@@ -32,6 +32,16 @@ class AppColors {
   static const Color darkBackground = Color(0xFF0F0F23);
   static const Color darkSurface = Color(0xFF1A1A2E);
   static const Color darkCard = Color(0xFF16213E);
+
+  // ── Short aliases used by new screens ──────────────────────────────────────
+  static const Color red      = accent;           // 0xFFE53935
+  static const Color redDark  = accentDark;       // 0xFFC62828
+  static const Color card     = surface;          // 0xFFFFFFFF
+  static const Color borderCol = divider;         // 0xFFE0E0E0
+  static const Color bg       = background;       // 0xFFF5F7FA
+  static const Color text     = textPrimary;      // 0xFF1A1A2E
+  static const Color textLight = textHint;        // 0xFF9CA3AF
+  static const Color textMid  = textSecondary;    // 0xFF6B7280
 }
 
 class AppTheme {
@@ -149,6 +159,9 @@ class AppTheme {
       scaffoldBackgroundColor: AppColors.background,
     );
   }
+
+  // Alias expected by new main.dart
+  static ThemeData get light => lightTheme;
 
   static ThemeData get darkTheme {
     return ThemeData(

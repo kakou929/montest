@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../models/app_models.dart';
 import '../../providers/app_providers.dart';
 import '../../utils/app_theme.dart';
-import '../../utils/app_router.dart';
 import '../../widgets/app_widgets.dart';
 
 class LoginScreen extends ConsumerStatefulWidget {
@@ -50,7 +50,15 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
         return;
       }
 
-      // Navigation handled by GoRouter redirect based on auth state
+      if (!mounted) return;
+      switch (userProfile.role) {
+        case UserRole.admin:
+          context.go('/admin');
+        case UserRole.instructor:
+          context.go('/instructor');
+        case UserRole.student:
+          context.go('/student');
+      }
     } catch (e) {
       setState(() {
         _errorMessage = _parseFirebaseError(e.toString());
